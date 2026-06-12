@@ -1,0 +1,8 @@
+{
+    "name": "translucencebyRR",
+    "description": "A translucent/frosted glass Discord theme",
+    "version": "2.0.0",
+    "author": "rrxcore",
+    "theme": "translucencebyRR.theme.css",
+    "license": "MIT"
+}
