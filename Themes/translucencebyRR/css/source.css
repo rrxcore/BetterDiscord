@@ -1,0 +1,297 @@
+/**
+ * @name translucencebyRR
+ * @version 2.0.0
+ * @description A translucent/frosted glass Discord theme
+ * @author rrxcore
+ *
+ * @website https://github.com/rrxcore
+ * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Translucence/css/source.css
+ * @donate https://paypal.me/capnkitten
+ * @invite jzJkA6Z
+ */
+
+@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
+
+:root {
+	/* APP ELEMENTS */
+	--app-bg: url("https://cdn.discordapp.com/attachments/1452977755577909421/1514905787858686049/daredevil.webp?ex=6a2d1175&is=6a2bbff5&hm=8b6a13f89f5966567d637d5d34e1a2008245aaadbd9ab0258bfc6f7f340b8050");
+	--app-blur: 6px;
+	--app-margin: 24px;
+	--app-radius: 8px;
+
+	/* ACCENT HSL AND TEXT COLOR SETTINGS */
+	--accent-hue: 355;
+    --accent-saturation: 85%;
+    --accent-lightness: 60%;
+	--accent-opacity: 0.8;
+	--accent-text-color: hsl(0,0%,0%);
+
+	/* SIDEBARS AND CHAT AREA COLOR SETTINGS */
+	--sidebar-color: hsl(0,0%,0%,0.65);
+	--main-content-color: hsl(0,0%,0%,0.55);
+
+	/* MESSAGE SETTINGS */
+	--message-color: hsl(0,0%,0%,0.45);
+    --message-color-hover: hsl(0,0%,0%,0.55);
+	--message-radius: 18px;
+	--message-padding-top: 8px;
+	--message-padding-side: 8px;
+
+	/* REPLY HSL COLOR SETTINGS */
+	--reply-hue: 328;
+    --reply-saturation: 79%;
+    --reply-lightness: 64%;
+	--reply-opacity: 1;
+
+	/* TEXTAREA SETTINGS */
+	--textarea-color: 255,255,255;
+    --textarea-alpha: 0.125;
+    --textarea-alpha-focus: 0.165;
+	--textarea-text-color: hsl(0,0%,100%);
+	--textarea-radius: 28px;
+
+	/* CARD SETTINGS */
+	--card-color: hsl(0,0%,100%,0.14);
+    --card-color-hover: hsl(0,0%,100%,0.18);
+    --card-color-select: hsl(0,0%,100%,0.21);
+	--card-radius: 18px;
+
+	/* BUTTON SETTINGS */
+	--button-height: 32px;
+	--button-padding: 16px;
+	--button-action-color: hsl(0,0%,0%);
+	--button-radius: 16px;
+
+	/* POPOUT SETTINGS */
+    --popout-color: hsl(0,0%,0%,0.75);
+    --popout-blur: 6px;
+    --popout-radius: 18px;
+    --popout-shadow: 0 20px 40px hsl(0,0%,0%,0.44);
+    --popout-shadow-border: inset 0 1px 1px hsl(0,100%,100%,0.35), inset 0 -1px 2px hsl(0,0%,0%,0.25), inset 0 0 0 1px hsl(0,100%,100%,0.04); /* Set this variable to none to remove the popout liquid glass border */
+
+	/* LIQUID GLASS SETTINGS */
+	--light-angle: 40deg;
+
+	/* Remove the opening and closing comment brackets to remove the liquid glass shadow */
+	/*--liquid-glass-shadow: none;*/
+}
+
+@supports (color: color-mix(in lch, red, blue)) {
+	.theme-dark {
+		/* TEXT COLOR SETTINGS */
+		--text-primary: hsl(0,0%,100%);
+		--text-secondary: hsl(0,0%,77%);
+		--text-default: hsl(0,0%,86%);
+		--text-muted: hsl(0,0%,72%);
+		--channels-default: hsl(0,0%,73%);
+		--channel-icon: hsl(0,0%,73%);
+		--text-strong: hsl(0,0%,100%);
+
+		/* ICON COLOR SETTINGS */
+		--icon-primary: hsl(0,0%,96%);
+		--icon-secondary: hsl(0,0%,84%);
+		--icon-tertiary: hsl(0,0%,71%);
+
+		/* INTERACTIVE COLOR SETTINGS */
+		--interactive-normal: hsl(0,0%,79%);
+		--interactive-hover: hsl(0,0%,91%);
+		--interactive-active: hsl(0,0%,100%);
+		--interactive-muted: hsl(0,0%,43%);
+
+		/* BACKGROUND MODIFIER SETTINGS */
+		--background-modifier-hover: hsl(0,0%,100%,0.075);
+		--background-modifier-active: hsl(0,0%,100%,0.1);
+		--background-modifier-selected: hsl(0,0%,100%,0.125);
+		--background-modifier-accent: hsl(0,0%,100%,0.175);
+		--background-primary: transparent;
+
+		/* ACCENT COLORED TEXT AND LINK SETTINGS */
+		--text-brand: hsl(var(--accent-hsl));
+		--text-link: hsl(var(--accent-hsl));
+	}
+}
+
+/* Make buttons more dark and blurred for easier highlighting */
+button, 
+[class*="lookFilled_"], 
+[class*="button_"] {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+button:hover, 
+[class*="lookFilled_"]:hover, 
+[class*="button_"]:hover {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Top titlebar elements - Glass Pill designs */
+
+/* 1. Left top corner back/forward history arrows */
+[class*="backForwardButtons_"],
+[class*="historyButtons_"] {
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    padding: 2px 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin-left: 8px !important;
+    margin-top: 4px !important;
+    height: 24px !important;
+}
+
+[class*="backForwardButtons_"] button,
+[class*="historyButtons_"] button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.85 !important;
+    transition: all 0.15s ease;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 4px !important;
+    padding: 0 !important;
+}
+
+[class*="backForwardButtons_"] button:hover,
+[class*="historyButtons_"] button:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+}
+
+[class*="backForwardButtons_"] svg,
+[class*="historyButtons_"] svg {
+    opacity: 1 !important;
+}
+
+/* 2. Top center Server Name / Wordmark (Large Glass Pill) */
+[class*="typeWindows_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]),
+[class*="titleBar_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]),
+[class*="titleBar"] > *:not([class*="winButtons"]):not([class*="historyButtons"]):not([class*="backForwardButtons"]),
+[class*="wordmarkWindows_"],
+[class*="wordmark_"],
+[class*="wordmark"],
+[class*="titlebar" i] [class*="wordmark" i],
+[class*="titlebar" i] [class*="title" i] {
+    position: relative !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 8px 24px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 34px !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+    margin-top: 6px !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 0 !important;
+    transform: translateX(-50%) !important;
+    width: fit-content !important;
+    z-index: 100 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+[class*="typeWindows_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"])::before,
+[class*="titleBar_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"])::before,
+[class*="titleBar"] > *:not([class*="winButtons"]):not([class*="historyButtons"]):not([class*="backForwardButtons"])::before,
+[class*="wordmarkWindows_"]::before,
+[class*="wordmark_"]::before,
+[class*="wordmark"]::before,
+[class*="titlebar" i] [class*="wordmark" i]::before,
+[class*="titlebar" i] [class*="title" i]::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    margin: auto !important;
+    width: calc(100% + 4px) !important;
+    height: calc(100% + 4px) !important;
+    background: rgba(10, 10, 10, 0.20) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 999px !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24) !important;
+    z-index: -1 !important;
+}
+
+[class*="typeWindows_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]) *,
+[class*="titleBar_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]) *,
+[class*="titleBar"] > *:not([class*="winButtons"]):not([class*="historyButtons"]):not([class*="backForwardButtons"]) *,
+[class*="wordmarkWindows_"] *,
+[class*="wordmark_"] *,
+[class*="wordmark"] *,
+[class*="titlebar" i] [class*="wordmark" i] *,
+[class*="titlebar" i] [class*="title" i] * {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+[class*="typeWindows_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]) svg,
+[class*="titleBar_"] > *:not([class*="winButtons_"]):not([class*="historyButtons_"]):not([class*="backForwardButtons_"]) svg,
+[class*="titleBar"] > *:not([class*="winButtons"]):not([class*="historyButtons"]):not([class*="backForwardButtons"]) svg,
+[class*="wordmarkWindows_"] svg,
+[class*="wordmark_"] svg,
+[class*="wordmark"] svg,
+[class*="titlebar" i] [class*="wordmark" i] svg,
+[class*="titlebar" i] [class*="title" i] svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* 3. Right top corner Window Controls (Minimize, Maximize, Close) */
+[class*="winButtons_"] {
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 8px !important;
+    margin-top: 4px !important;
+    height: 24px !important;
+}
+
+[class*="winButton_"] {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    height: 100% !important;
+    width: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    opacity: 0.85 !important;
+    transition: all 0.15s ease;
+}
+
+[class*="winButton_"]:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+}
+
+[class*="winButtonClose_"]:hover {
+    background-color: rgba(237, 66, 69, 0.55) !important;
+}
+
+/* Glow and border around the main Discord container panels */
+.layers__160d8 {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(237, 66, 69, 0.25) !important;
+    border: 1px solid rgba(237, 66, 69, 0.2) !important;
+    border-radius: var(--app-radius) !important;
+}
