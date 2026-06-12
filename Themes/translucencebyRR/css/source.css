@@ -126,6 +126,34 @@ button:hover,
     background-color: rgba(0, 0, 0, 0.35) !important;
 }
 
+/* Style filled / confirm buttons to be premium white with black text */
+[class*="lookFilled_"][class*="colorBrand_"],
+[class*="lookFilled_"][class*="colorGreen_"] {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+[class*="lookFilled_"][class*="colorBrand_"]:hover,
+[class*="lookFilled_"][class*="colorGreen_"]:hover {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4) !important;
+}
+[class*="lookFilled_"][class*="colorBrand_"] *,
+[class*="lookFilled_"][class*="colorGreen_"] * {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Style red/destructive confirm buttons to be bright translucent red with white text */
+[class*="lookFilled_"][class*="colorRed_"] {
+    background-color: rgba(237, 66, 69, 0.8) !important;
+}
+[class*="lookFilled_"][class*="colorRed_"]:hover {
+    background-color: rgba(237, 66, 69, 1) !important;
+    box-shadow: 0 0 12px rgba(237, 66, 69, 0.4) !important;
+}
+[class*="lookFilled_"][class*="colorRed_"] * {
+    color: #ffffff !important;
+}
+
 /* Top titlebar elements - Glass Pill designs */
 
 /* 1. Left top corner back/forward history arrows */
