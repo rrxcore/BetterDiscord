@@ -111,19 +111,19 @@
 	}
 }
 
-/* Make buttons more dark and blurred for easier highlighting */
+/* Make buttons more translucent and blurred for easier highlighting */
 button, 
 [class*="lookFilled_"], 
 [class*="button_"] {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
     backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
 }
 
 button:hover, 
 [class*="lookFilled_"]:hover, 
 [class*="button_"]:hover {
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.35) !important;
 }
 
 /* Top titlebar elements - Glass Pill designs */
